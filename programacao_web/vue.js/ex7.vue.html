@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-way-data-bind Vue.js</title>
+  <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ titulo }}</h1>>
+    <carros-list v-for="carro in carros" v-bind:carro="carro"></carros-list>
+  </div>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          titulo: "Utilizando componentes",
+          carros: ["Fusca", "Kombi", "Brasília", "Uno", "Opala"]
+        }
+      }
+    })
+    app.component("carros-list", {
+      props: ["carro"],
+      template: "<li> {{ carro }} </li>"
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

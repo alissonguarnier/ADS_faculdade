@@ -1,0 +1,62 @@
+<html>
+
+
+
+<head>
+
+  <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+
+
+<body>
+
+
+
+  <div id="app">
+
+    <h1>{{ titulo }}</h1>
+
+    <compras-list v-for="item in itens" v-bind:item="item"></compras-list>
+
+  </div>
+
+
+
+  <script>
+
+    const app = Vue.createApp({
+
+      data() {
+
+        return {
+
+          titulo: "Lista de compras",
+
+          itens: ['Café', 'Farinha', 'Macarrão', 'Feijão', 'Milho de Pipoca']
+
+        }
+      }
+
+    })
+
+    app.component('compras-list', {
+
+      props: ['item'],
+
+      template: '<li>{{ item }}</li>'
+
+    })
+
+    app.mount('#app')
+
+  </script>
+
+
+
+</body>
+
+
+
+</html>

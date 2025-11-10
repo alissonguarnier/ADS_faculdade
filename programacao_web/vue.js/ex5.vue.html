@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-way-data-bind Vue.js</title>
+  <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(nome, index) in nomes">
+        {{ index }} - {{ nome }}
+      </li>
+    </ul>
+  </div>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          nomes: ['Marco', 'Mariana', 'Ana', 'Alexandre', 'Suzana']
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

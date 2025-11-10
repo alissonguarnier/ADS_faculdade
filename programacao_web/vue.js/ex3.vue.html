@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-way-data-bind Vue.js</title>
+  <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <label for="nome">Nome: </label>
+    <input type="text" v-model="nome">
+    <p>Olá {{ nome }}! Bem-vindo ao Vue</p>
+  </div>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          nome: ''
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
